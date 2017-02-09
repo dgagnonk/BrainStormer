@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNote));
             this.txtNote = new System.Windows.Forms.TextBox();
             this.tmrSave = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnExport = new System.Windows.Forms.ToolStripButton();
             this.btnImport = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnTextToSpeech = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +63,9 @@
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnExport,
-            this.btnImport});
+            this.btnImport,
+            this.toolStripSeparator1,
+            this.btnTextToSpeech});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(551, 25);
@@ -84,6 +89,20 @@
             this.btnImport.Size = new System.Drawing.Size(63, 22);
             this.btnImport.Text = "Import";
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnTextToSpeech
+            // 
+            this.btnTextToSpeech.Image = ((System.Drawing.Image)(resources.GetObject("btnTextToSpeech.Image")));
+            this.btnTextToSpeech.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnTextToSpeech.Name = "btnTextToSpeech";
+            this.btnTextToSpeech.Size = new System.Drawing.Size(103, 22);
+            this.btnTextToSpeech.Text = "Text to Speech";
+            this.btnTextToSpeech.Click += new System.EventHandler(this.btnTextToSpeech_Click);
             // 
             // frmNote
             // 
@@ -109,5 +128,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnExport;
         private System.Windows.Forms.ToolStripButton btnImport;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnTextToSpeech;
     }
 }

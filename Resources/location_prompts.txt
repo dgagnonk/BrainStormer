@@ -1,0 +1,26 @@
+Name
+Architecture
+Cities
+Geography
+How do people dress?
+How do the higher classes live?
+How do the lower classes live?
+Hubs
+Languages
+Laws and enforcement
+Level of technology
+Magic and how it is perceived
+Places of interest
+Political system
+Population
+Racial/species information
+Regions/counties
+Religion practiced here
+Special areas of worship
+Towns
+Villages
+Wars?
+Weather
+What do people do for fun?
+What do people do for work?
+Who governs?

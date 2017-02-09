@@ -1,19 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿/*
+    BrainStormer: Brainstorm your writing.
+    Copyright (C) 2015-2017  Daniel Gagnon-King
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+using System;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Speech.Synthesis;
 
 namespace BrainStormerNoPlugins
 {
+
+    /*
+     * Rich text editor
+     * Saves files in the project archive as .rtf
+     * Features:
+     *      - Import/Export text from another document
+     *      - Text formatting (simple)
+     *      - Word count, letter count
+     *      - Text search, replace
+     *      - Document synopsis
+     *      - Text to speech
+     */
+
     public partial class frmRichText : Form
     {
 
-        // Does not have "replace all"
+        
 
         private bool Bold = false;
         private bool Italic = false;
@@ -24,6 +52,8 @@ namespace BrainStormerNoPlugins
 
         private int FindIndex = -1;
 
+        private TextToSpeech voice;
+
         #region Constructor
 
         public frmRichText(string ID, string title, bool LoadFile)
@@ -33,12 +63,36 @@ namespace BrainStormerNoPlugins
             this.title = title;
             this.ID = ID;
             this.Text = title;
+
+            voice = new TextToSpeech();
+
             if (LoadFile == true)
+            {
                 rtbContent.LoadFile(ProjectInfo.ProjectPath + "/" + ID + ".rtf");
+                try
+                {
+                    txtSynopsis.Text = File.ReadAllText(ProjectInfo.ProjectPath + "/" + ID + "synopsis.txt"); // load synopsis
+                }
+                catch (FileNotFoundException) { txtSynopsis.Text = ""; }
+
+                RefreshFontLabel();
+            }
+                
 
             rtbContent.SelectionChanged += RtbContent_SelectionChanged;
             rtbContent.KeyDown += RtbContent_KeyDown;
+
+            txtSynopsis.LostFocus += TxtSynopsis_LostFocus;
+
+            this.FormClosing += FrmRichText_FormClosing;
         }
+
+        private void FrmRichText_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            voice.StopSpeech();
+        }
+
+
 
 
 
@@ -72,6 +126,7 @@ namespace BrainStormerNoPlugins
             try
             {
                 rtbContent.SaveFile(ProjectInfo.ProjectPath + "/" + this.ID + ".rtf");
+                File.WriteAllText(ProjectInfo.ProjectPath + "/" + this.ID + "synopsis.txt", txtSynopsis.Text);
             }
             catch (Exception) { }
         }
@@ -248,5 +303,47 @@ namespace BrainStormerNoPlugins
 
         #endregion
 
+        #region Misc Events
+
+        private void btnSynopsis_Click(object sender, EventArgs e)
+        {
+            panSynopsis.Visible = btnSynopsis.Checked;
+        }
+
+        private void TxtSynopsis_LostFocus(object sender, EventArgs e)
+        {
+            panSynopsis.Visible = false;
+            btnSynopsis.Checked = false;
+        }
+
+        #endregion
+
+        #region Text to speech
+
+        private void btnTextToSpeech_Click(object sender, EventArgs e)
+        {
+            if (voice.GetState() == SynthesizerState.Speaking)
+            {
+                voice.StopSpeech();
+                return;
+            }
+
+            if (rtbContent.Text.Length < 1) return;
+
+            string toRead = "";
+
+            if (rtbContent.SelectedText.Length < 1)
+            {
+                toRead = rtbContent.Text;
+            }
+            else
+            {
+                toRead = rtbContent.SelectedText;
+            }
+
+            voice.SayText(toRead);
+        }
+
+        #endregion
     }
 }

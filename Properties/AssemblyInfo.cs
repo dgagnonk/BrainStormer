@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BrainStormerNoPlugins")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("BrainStormer")]
+[assembly: AssemblyDescription("Writing Software")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BrainStormerNoPlugins")]
+[assembly: AssemblyCompany("Rarewaffles/Lookatthisrhino")]
+[assembly: AssemblyProduct("BrainStormer")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

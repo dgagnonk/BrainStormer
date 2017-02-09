@@ -1,0 +1,14 @@
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\bin\Debug\BrainStormerNoPlugins.exe.config
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.csprojResolveAssemblyReference.cache
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.Properties.Resources.resources
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.csproj.GenerateResource.Cache
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\bin\Debug\BrainStormerNoPlugins.exe
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\bin\Debug\BrainStormerNoPlugins.pdb
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.frmImage.resources
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.frmMain.resources
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.frmNote.resources
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.frmRichText.resources
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.exe
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.pdb
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.frmPrompt.resources

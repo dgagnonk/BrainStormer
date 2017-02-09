@@ -29,26 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRichText));
             this.rtbContent = new System.Windows.Forms.RichTextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnExport = new System.Windows.Forms.ToolStripButton();
+            this.btnImport = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.wordCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.letterCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tmrSave = new System.Windows.Forms.Timer(this.components);
+            this.btnBold = new System.Windows.Forms.ToolStripButton();
+            this.btnItalic = new System.Windows.Forms.ToolStripButton();
+            this.btnUnderline = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnFont = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.txtFind = new System.Windows.Forms.ToolStripTextBox();
-            this.btnExport = new System.Windows.Forms.ToolStripButton();
-            this.btnImport = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.wordCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.letterCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnBold = new System.Windows.Forms.ToolStripButton();
-            this.btnItalic = new System.Windows.Forms.ToolStripButton();
-            this.btnUnderline = new System.Windows.Forms.ToolStripButton();
             this.btnFind = new System.Windows.Forms.ToolStripButton();
             this.btnReplace = new System.Windows.Forms.ToolStripButton();
+            this.btnSynopsis = new System.Windows.Forms.ToolStripButton();
+            this.tmrSave = new System.Windows.Forms.Timer(this.components);
+            this.panSynopsis = new System.Windows.Forms.Panel();
+            this.txtSynopsis = new System.Windows.Forms.TextBox();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnTextToSpeech = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
+            this.panSynopsis.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtbContent
@@ -62,7 +70,7 @@
             this.rtbContent.Margin = new System.Windows.Forms.Padding(50, 50, 50, 3);
             this.rtbContent.Name = "rtbContent";
             this.rtbContent.ShowSelectionMargin = true;
-            this.rtbContent.Size = new System.Drawing.Size(665, 436);
+            this.rtbContent.Size = new System.Drawing.Size(735, 479);
             this.rtbContent.TabIndex = 1;
             this.rtbContent.Text = "";
             // 
@@ -83,54 +91,16 @@
             this.toolStripSeparator4,
             this.txtFind,
             this.btnFind,
-            this.btnReplace});
+            this.btnReplace,
+            this.toolStripSeparator6,
+            this.btnSynopsis,
+            this.toolStripSeparator5,
+            this.btnTextToSpeech});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(665, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(735, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tmrSave
-            // 
-            this.tmrSave.Enabled = true;
-            this.tmrSave.Interval = 1000;
-            this.tmrSave.Tick += new System.EventHandler(this.tmrSave_Tick);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnFont
-            // 
-            this.btnFont.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnFont.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFont.Name = "btnFont";
-            this.btnFont.Size = new System.Drawing.Size(83, 22);
-            this.btnFont.Text = "Font: N/A 0pt";
-            this.btnFont.Click += new System.EventHandler(this.btnFont_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // txtFind
-            // 
-            this.txtFind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFind.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(100, 25);
             // 
             // btnExport
             // 
@@ -149,6 +119,11 @@
             this.btnImport.Size = new System.Drawing.Size(63, 22);
             this.btnImport.Text = "Import";
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripDropDownButton1
             // 
@@ -175,6 +150,11 @@
             this.letterCountToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.letterCountToolStripMenuItem.Text = "Letter Count";
             this.letterCountToolStripMenuItem.Click += new System.EventHandler(this.letterCountToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // btnBold
             // 
@@ -209,6 +189,32 @@
             this.btnUnderline.Text = "toolStripButton1";
             this.btnUnderline.Click += new System.EventHandler(this.btnUnderline_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnFont
+            // 
+            this.btnFont.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnFont.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFont.Name = "btnFont";
+            this.btnFont.Size = new System.Drawing.Size(83, 22);
+            this.btnFont.Text = "Font: N/A 0pt";
+            this.btnFont.Click += new System.EventHandler(this.btnFont_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // txtFind
+            // 
+            this.txtFind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFind.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(100, 25);
+            // 
             // btnFind
             // 
             this.btnFind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -229,11 +235,67 @@
             this.btnReplace.Text = "Replace";
             this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
             // 
+            // btnSynopsis
+            // 
+            this.btnSynopsis.CheckOnClick = true;
+            this.btnSynopsis.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnSynopsis.Image = ((System.Drawing.Image)(resources.GetObject("btnSynopsis.Image")));
+            this.btnSynopsis.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSynopsis.Name = "btnSynopsis";
+            this.btnSynopsis.Size = new System.Drawing.Size(57, 22);
+            this.btnSynopsis.Text = "Synopsis";
+            this.btnSynopsis.Click += new System.EventHandler(this.btnSynopsis_Click);
+            // 
+            // tmrSave
+            // 
+            this.tmrSave.Enabled = true;
+            this.tmrSave.Interval = 1000;
+            this.tmrSave.Tick += new System.EventHandler(this.tmrSave_Tick);
+            // 
+            // panSynopsis
+            // 
+            this.panSynopsis.Controls.Add(this.txtSynopsis);
+            this.panSynopsis.Location = new System.Drawing.Point(476, 25);
+            this.panSynopsis.Name = "panSynopsis";
+            this.panSynopsis.Size = new System.Drawing.Size(200, 100);
+            this.panSynopsis.TabIndex = 3;
+            this.panSynopsis.Visible = false;
+            // 
+            // txtSynopsis
+            // 
+            this.txtSynopsis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSynopsis.Location = new System.Drawing.Point(0, 0);
+            this.txtSynopsis.Multiline = true;
+            this.txtSynopsis.Name = "txtSynopsis";
+            this.txtSynopsis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSynopsis.Size = new System.Drawing.Size(200, 100);
+            this.txtSynopsis.TabIndex = 0;
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnTextToSpeech
+            // 
+            this.btnTextToSpeech.Image = ((System.Drawing.Image)(resources.GetObject("btnTextToSpeech.Image")));
+            this.btnTextToSpeech.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnTextToSpeech.Name = "btnTextToSpeech";
+            this.btnTextToSpeech.Size = new System.Drawing.Size(103, 22);
+            this.btnTextToSpeech.Text = "Text to Speech";
+            this.btnTextToSpeech.Click += new System.EventHandler(this.btnTextToSpeech_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
             // frmRichText
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 461);
+            this.ClientSize = new System.Drawing.Size(735, 504);
+            this.Controls.Add(this.panSynopsis);
             this.Controls.Add(this.rtbContent);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -242,6 +304,8 @@
             this.Load += new System.EventHandler(this.frmRichText_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.panSynopsis.ResumeLayout(false);
+            this.panSynopsis.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +332,11 @@
         private System.Windows.Forms.ToolStripTextBox txtFind;
         private System.Windows.Forms.ToolStripButton btnFind;
         private System.Windows.Forms.ToolStripButton btnReplace;
+        private System.Windows.Forms.ToolStripButton btnSynopsis;
+        private System.Windows.Forms.Panel panSynopsis;
+        private System.Windows.Forms.TextBox txtSynopsis;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton btnTextToSpeech;
     }
 }

@@ -121,6 +121,50 @@ namespace BrainStormerNoPlugins.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name
+        ///Name meaning/origin
+        ///Abilities, skills, talents
+        ///Alignment (good - neutral - evil)
+        ///Attitudes, opinions, worldview
+        ///Backstory and upbringing
+        ///Biggest regret
+        ///Dreams/aspirations
+        ///Education
+        ///Enemies
+        ///Extended family
+        ///Feuds
+        ///Friendships
+        ///Greatest fear
+        ///Health/age
+        ///Home
+        ///Immediate family
+        ///Moral limits
+        ///Motivation and overall goals
+        ///Negative personality traits
+        ///Physical traits (look, quirks, disability, etc.)
+        ///Political views/alignment
+        ///Positive personality traits
+        ///Racial/species traits
+        ///Religion/beliefs
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string character_prompts {
+            get {
+                return ResourceManager.GetString("character_prompts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clear {
+            get {
+                object obj = ResourceManager.GetObject("clear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap count {
@@ -136,6 +180,26 @@ namespace BrainStormerNoPlugins.Properties {
         internal static System.Drawing.Bitmap count2 {
             get {
                 object obj = ResourceManager.GetObject("count2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap custom {
+            get {
+                object obj = ResourceManager.GetObject("custom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit {
+            get {
+                object obj = ResourceManager.GetObject("edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -221,6 +285,41 @@ namespace BrainStormerNoPlugins.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name
+        ///Architecture
+        ///Cities
+        ///Geography
+        ///How do people dress?
+        ///How do the higher classes live?
+        ///How do the lower classes live?
+        ///Hubs
+        ///Languages
+        ///Laws and enforcement
+        ///Level of technology
+        ///Magic and how it is perceived
+        ///Places of interest
+        ///Political system
+        ///Population
+        ///Racial/species information
+        ///Regions/counties
+        ///Religion practiced here
+        ///Special areas of worship
+        ///Towns
+        ///Villages
+        ///Wars?
+        ///Weather
+        ///What do people do for fun?
+        ///What do people do for work?
+        ///Who governs?
+        ///.
+        /// </summary>
+        internal static string location_prompts {
+            get {
+                return ResourceManager.GetString("location_prompts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap note {
@@ -236,6 +335,16 @@ namespace BrainStormerNoPlugins.Properties {
         internal static System.Drawing.Bitmap note_25px {
             get {
                 object obj = ResourceManager.GetObject("note_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_32px {
+            get {
+                object obj = ResourceManager.GetObject("plus_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +372,39 @@ namespace BrainStormerNoPlugins.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap right_click {
+            get {
+                object obj = ResourceManager.GetObject("right click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap save32 {
             get {
                 object obj = ResourceManager.GetObject("save32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settings {
+            get {
+                object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap speech {
+            get {
+                object obj = ResourceManager.GetObject("speech", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
