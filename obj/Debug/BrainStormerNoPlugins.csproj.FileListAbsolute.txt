@@ -12,3 +12,4 @@ C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainS
 C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.exe
 C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.pdb
 C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\obj\Debug\BrainStormerNoPlugins.frmPrompt.resources
+C:\Users\Dan\Google Drive\Programming\Repositories\BrainStormer\bin\Debug\ICSharpCode.SharpZipLib.dll

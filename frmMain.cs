@@ -19,7 +19,6 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using System.IO.Compression;
 using System.IO;
 using System.Drawing;
 using Newtonsoft.Json;
@@ -518,7 +517,9 @@ namespace BrainStormerNoPlugins
             if (save.ShowDialog() == DialogResult.OK)
             {
                 if (File.Exists(save.FileName)) File.Delete(save.FileName);
-                ZipFile.CreateFromDirectory(ProjectInfo.ProjectPath, save.FileName);
+                //ZipFile.CreateFromDirectory(ProjectInfo.ProjectPath, save.FileName);
+
+                ProjectIO.CreateProjectFileUnix(ProjectInfo.ProjectPath, save.FileName);
             }
 
             ProjectInfo.Dirty = false;
@@ -535,7 +536,7 @@ namespace BrainStormerNoPlugins
             ProjectIO.SaveTree(tvContent, ProjectInfo.ProjectPath + "tree.TREEINFO");
 
             if (File.Exists(path)) File.Delete(path);
-            ZipFile.CreateFromDirectory(ProjectInfo.ProjectPath, path);
+            ProjectIO.CreateProjectFileUnix(ProjectInfo.ProjectPath, path);
 
             if (TriggerDirty == true) ProjectInfo.Dirty = false;
         }
@@ -580,7 +581,8 @@ namespace BrainStormerNoPlugins
 
                 if (Directory.Exists(ProjectInfo.ProjectPath)) Directory.Delete(ProjectInfo.ProjectPath, true);
 
-                ZipFile.ExtractToDirectory(filename, ProjectInfo.ProjectPath);
+                ProjectIO.ExtractZipFile(filename, "", ProjectInfo.ProjectPath);
+                //ZipFile.ExtractToDirectory(filename, ProjectInfo.ProjectPath);
                 ProjectIO.LoadTree(tvContent, ProjectInfo.ProjectPath + "/tree.TREEINFO");
 
                 BuildNodes(tvContent.Nodes);
