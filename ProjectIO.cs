@@ -91,12 +91,6 @@ namespace BrainStormerNoPlugins
             }
         }
 
-        // Make sure the file is created that we will be putting data into.
-        public static void CreateProjectFile(string filepath)
-        {
-            if (File.Exists(filepath)) File.Delete(filepath);
-            ZipFile.CreateFromDirectory(ProjectInfo.ProjectPath, filepath);
-        }
 
         public static void CreateProjectFileUnix(string projectpath, string filepath)
         {
